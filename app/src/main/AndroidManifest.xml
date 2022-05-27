@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.news_application">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".activity.UserListActivity"></activity>
+        <activity android:name=".activity.ReportActivity" />
+        <activity android:name=".activity.NotificationActivity" />
+        <activity android:name=".activity.MyTraceActivity" />
+        <activity android:name=".activity.HashtagActivity" />
+        <activity android:name=".activity.UserInfoActivity" />
+        <activity android:name=".activity.HotKeywordActivity" />
+        <activity android:name=".activity.WeatherActivity" />
+        <activity android:name=".activity.NewsDetailActivity" />
+        <activity android:name=".activity.NewsListActivity" />
+        <activity android:name=".activity.MenuActivity" />
+        <activity android:name=".activity.JoinActivity" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
