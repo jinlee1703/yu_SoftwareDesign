@@ -1,4 +1,4 @@
-package com.example.news_application;
+package com.example.news_application.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.news_application.R;
 import com.example.news_application.obj.News;
 
 public class NewsFormActivity extends AppCompatActivity {

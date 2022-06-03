@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".NewsFormActivity"></activity>
+        <activity android:name=".activity.NewsFormActivity"></activity>
         <activity android:name=".activity.UserListActivity" />
         <activity android:name=".activity.ReportActivity" />
         <activity android:name=".activity.NotificationActivity" />
