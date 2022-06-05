@@ -2,11 +2,15 @@ package com.example.news_application.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.news_application.R;
+import com.example.news_application.db.DB;
 
 public class MainActivity extends AppCompatActivity {
 

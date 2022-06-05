@@ -5,6 +5,9 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.news_application.R;
+import com.example.news_application.db.DB;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText idText;
@@ -33,6 +37,8 @@ public class LoginActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        DB.init(this);
     }
 
     public void login() {
@@ -42,4 +48,6 @@ public class LoginActivity extends AppCompatActivity {
     public void join() {
 
     }
+
+
 }
