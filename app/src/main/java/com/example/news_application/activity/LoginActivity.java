@@ -59,20 +59,16 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     // 로그인 실패
                     Toast.makeText(LoginActivity.this, "로그인 실패!!!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this, JoinActivity.class);
-                    startActivity(intent);
                 }
             }
         });
+
+        joinBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, JoinActivity.class);
+                startActivity(intent);
+            }
+        });
     }
-
-    public void login() {
-
-    }
-
-    public void join() {
-
-    }
-
-
 }
