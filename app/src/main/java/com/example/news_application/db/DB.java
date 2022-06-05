@@ -11,8 +11,6 @@ import java.sql.Connection;
 import java.sql.Statement;
 
 public class DB {
-    public static Connection conn;
-    public static Statement stmt;
     public static DBHelper dbHelper;
     public static SQLiteDatabase db;
 
@@ -20,9 +18,6 @@ public class DB {
         dbHelper = new DBHelper(context);
 
         db = dbHelper.getWritableDatabase();
-
-
-
         dbHelper.onUpgrade(db, 1, 2);
 
         db.execSQL("INSERT INTO user ('id', 'pw', 'name', 'phone', 'role') VALUES ('id1', 'pw1', '이름1', '010-0000-0000', '0')");
@@ -34,6 +29,17 @@ public class DB {
 
         dbHelper.close();
         db.close();
+    }
+
+    public static boolean login(String id, String pw) {
+        db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM user", null );
+        while (cursor.moveToNext()) {
+            if (cursor.getString(1).equals(id) && cursor.getString(2).equals(pw)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     static class DBHelper extends SQLiteOpenHelper {
