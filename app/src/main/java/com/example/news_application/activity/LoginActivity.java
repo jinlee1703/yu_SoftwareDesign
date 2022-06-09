@@ -27,12 +27,15 @@ import android.widget.Toast;
 
 import com.example.news_application.R;
 import com.example.news_application.db.DB;
+import com.example.news_application.obj.User;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText idText;
     private EditText pwText;
     private Button loginBtn;
     private Button joinBtn;
+
+    static User user;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,4 +74,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
