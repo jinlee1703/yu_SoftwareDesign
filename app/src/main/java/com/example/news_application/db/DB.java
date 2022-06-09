@@ -4,14 +4,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.example.news_application.obj.User;
-
-import java.sql.Array;
-import java.sql.Connection;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 public class DB {
@@ -27,11 +22,6 @@ public class DB {
 
         db.execSQL("INSERT INTO user ('id', 'pw', 'name', 'phone', 'role') VALUES ('id1', 'pw1', '사용자1', '010-0000-0000', '1')");
         db.execSQL("INSERT INTO user ('id', 'pw', 'name', 'phone', 'role') VALUES ('id2', 'pw2', '기자1', '010-0000-0000', '2')");
-
-        Cursor cursor = db.rawQuery("SELECT * FROM user", null );
-        while (cursor.moveToNext()) {
-            Toast.makeText(context, cursor.getString(1), Toast.LENGTH_SHORT).show();
-        }
 
         dbHelper.close();
         db.close();
@@ -57,6 +47,27 @@ public class DB {
                     return true;
                 }
             }
+            return false;
+        }
+    }
+
+    public static boolean join(String id, String pw, String name, String phone, int role) {
+        try {
+            db = dbHelper.getWritableDatabase();
+            db.execSQL("INSERT INTO user ('id', 'pw', 'name', 'phone', 'role') VALUES ('" + id + "', '" + pw + "', '" + name + "', '" + phone + "', '" + role + "')");
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static boolean isDuplicateID(String id) {
+        db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM user WHERE id='" + id + "'", null );
+
+        if (cursor.moveToNext()) {
+            return true;
+        } else {
             return false;
         }
     }

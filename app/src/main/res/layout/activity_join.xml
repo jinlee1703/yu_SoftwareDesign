@@ -12,7 +12,7 @@
     tools:context=".activity.JoinActivity">
 
     <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/roleSpinner"
+        android:id="@+id/join_roleSpinner"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="90dp"
@@ -23,7 +23,7 @@
         />
 
     <EditText
-        android:id="@+id/idText"
+        android:id="@+id/join_idText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -32,27 +32,26 @@
         android:hint="ID"
         android:inputType="text"
         android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toStartOf="@+id/checkBtn"
+        app:layout_constraintEnd_toStartOf="@+id/join_checkBtn"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/roleSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/join_roleSpinner" />
 
     <Button
-        android:id="@+id/checkBtn"
+        android:id="@+id/join_checkBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginTop="138dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:enabled="false"
         android:text="Check"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/roleSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/join_roleSpinner" />
 
     <EditText
-        android:id="@+id/nameText"
+        android:id="@+id/join_nameText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -65,10 +64,10 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idText" />
+        app:layout_constraintTop_toBottomOf="@+id/join_idText" />
 
     <EditText
-        android:id="@+id/pwText1"
+        android:id="@+id/join_pwText1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -81,10 +80,10 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameText" />
+        app:layout_constraintTop_toBottomOf="@+id/join_nameText" />
 
     <EditText
-        android:id="@+id/pwText2"
+        android:id="@+id/join_pwText2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -97,10 +96,10 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pwText1" />
+        app:layout_constraintTop_toBottomOf="@+id/join_pwText1" />
 
     <EditText
-        android:id="@+id/phoneText"
+        android:id="@+id/join_phoneText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -113,19 +112,18 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pwText2" />
+        app:layout_constraintTop_toBottomOf="@+id/join_pwText2" />
 
     <Button
-        android:id="@+id/joinBtn"
+        android:id="@+id/join_joinBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:enabled="false"
         android:text="Join"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneText" />
+        app:layout_constraintTop_toBottomOf="@+id/join_phoneText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
