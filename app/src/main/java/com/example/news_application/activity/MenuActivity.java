@@ -33,7 +33,6 @@ public class MenuActivity extends AppCompatActivity {
         for (int i = 0; i < 5; i ++) {
             btn[i] = (Button) findViewById(btnId[i]);
         }
-
         setTextViews(DB.loginUser.getUserRole());
         setButtons(DB.loginUser.getUserRole());
 

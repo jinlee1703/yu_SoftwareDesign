@@ -9,7 +9,7 @@ public class User {
     private int userRole;
     private ArrayList<String> hashtag;
 
-    public User(int userNum, String userId, String userName, int userRole, ArrayList<String> hashtag) {
+    public User(int userNo, String userId, String userName, int userRole, ArrayList<String> hashtag) {
         this.userNo = userNo;
         this.userId = userId;
         this.userName = userName;
@@ -17,7 +17,7 @@ public class User {
         this.hashtag = hashtag;
     }
 
-    public User(int role) {
+    public User() {
         this.userNo = 0;
         this.userId = "admin";
         this.userName = "관리자";
@@ -25,7 +25,7 @@ public class User {
         this.hashtag = null;
     }
 
-    public int getUserNum() {
+    public int getUserNo() {
         return userNo;
     }
 

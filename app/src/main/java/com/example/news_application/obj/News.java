@@ -1,19 +1,35 @@
 package com.example.news_application.obj;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.ByteArrayOutputStream;
+
 public class News {
-    private String image;
     private String title;
     private String contents;
+    private byte[] image;
 
-    public String getImage() {
+    public News(String title, String contents, byte[] image) {
+        this.title = title;
+        this.contents = contents;
+
+//        Bitmap bitmap = ((BitmapDrawable)image).getBitmap();
+//        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//        this.image = stream.toByteArray();
+        this.image = image;
+    }
+
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImage(Drawable image) {
+
     }
 
     public String getTitle() {
