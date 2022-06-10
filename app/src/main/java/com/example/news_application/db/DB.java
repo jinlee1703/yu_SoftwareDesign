@@ -1,5 +1,6 @@
 package com.example.news_application.db;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -60,7 +61,7 @@ public class DB {
                     while (tagCursor.moveToNext()) {
                         tagList.add(cursor.getString(2));
                     }
-                    loginUser = new User(cursor.getInt(0), cursor.getString(1), cursor.getString(3), cursor.getInt(5), tagList);
+                    loginUser = new User(cursor.getInt(0), cursor.getString(1), cursor.getString(3), cursor.getString(4), cursor.getInt(5), tagList);
                     return true;
                 }
             }
@@ -116,7 +117,32 @@ public class DB {
             p.executeInsert();
             return true;
         } catch (Exception e) {
-            Log.d("AAAAA", e.getMessage());
+            return false;
+        }
+    }
+
+    public static boolean updateUserInfo(String name, String pw, String phone) {
+        try {
+            db = dbHelper.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("pw", pw);
+            contentValues.put("name", name);
+            contentValues.put("phone", phone);
+
+            db.update("user", contentValues, "no = ?", new String[]{Integer.toString(loginUser.getUserNo())});
+            login(loginUser.getUserId(), pw);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static boolean withdrawalUser(int userNo) {
+        try {
+            db = dbHelper.getWritableDatabase();
+            db.delete("user","no = ?", new String[] {Integer.toString(userNo)});
+            return true;
+        } catch (Exception e) {
             return false;
         }
     }

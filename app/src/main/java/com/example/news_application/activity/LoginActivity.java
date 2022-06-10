@@ -42,8 +42,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        DB.init(this);
-
         // findViewById
         idText = (EditText) findViewById(R.id.login_idText);
         pwText = (EditText) findViewById(R.id.login_pwText);

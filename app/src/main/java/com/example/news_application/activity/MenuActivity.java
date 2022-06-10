@@ -21,7 +21,9 @@ public class MenuActivity extends AppCompatActivity {
     private Button[] btn = new Button[5];
     private int[] btnId = new int[]{R.id.menu_btn1, R.id.menu_btn2, R.id.menu_btn3, R.id.menu_btn4, R.id.menu_btn5};
     private String[][] btnText = new String[][]{{"신고 조회", "회원 관리"}, {"뉴스", "날씨", "오늘의 핫키워드", "내 정보", "내 알림"}, {"뉴스 작성", "내 정보"}};
-    private AppCompatActivity[][] activities =  new AppCompatActivity[][]{{new ReportActivity(), new UserListActivity()}, {new NewsListActivity(), new WeatherActivity(), new HotKeywordActivity(), new UserInfoActivity(), new MyTraceActivity()}, {new NewsFormActivity(), new MyTraceActivity()}};
+    private AppCompatActivity[][] activities =  new AppCompatActivity[][]{{new ReportActivity(), new UserListActivity()},
+            {new NewsListActivity(), new WeatherActivity(), new HotKeywordActivity(), new UserInfoActivity(), new MyTraceActivity()},
+            {new NewsFormActivity(), new UserInfoActivity()}};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

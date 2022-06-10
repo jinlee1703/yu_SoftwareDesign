@@ -87,14 +87,6 @@ public class NewsFormActivity extends AppCompatActivity {
         }
     }
 
-    public void findImage() {
-
-    }
-
-    public void writeNews() {
-
-    }
-
     public void setNewsCategory() {
         ArrayList<String> newsCategory = DB.getNewsCategory();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, newsCategory);

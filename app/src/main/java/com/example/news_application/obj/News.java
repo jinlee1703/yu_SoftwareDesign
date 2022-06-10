@@ -16,11 +16,6 @@ public class News {
     public News(String title, String contents, byte[] image) {
         this.title = title;
         this.contents = contents;
-
-//        Bitmap bitmap = ((BitmapDrawable)image).getBitmap();
-//        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-//        this.image = stream.toByteArray();
         this.image = image;
     }
 
