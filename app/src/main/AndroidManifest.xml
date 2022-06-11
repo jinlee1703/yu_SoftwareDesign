@@ -19,7 +19,6 @@
         <activity android:name=".activity.UserListActivity" />
         <activity android:name=".activity.ReportActivity" />
         <activity android:name=".activity.NotificationActivity" />
-        <activity android:name=".activity.MyTraceActivity" />
         <activity android:name=".activity.HashtagActivity" />
         <activity android:name=".activity.UserInfoActivity" />
         <activity android:name=".activity.HotKeywordActivity" />

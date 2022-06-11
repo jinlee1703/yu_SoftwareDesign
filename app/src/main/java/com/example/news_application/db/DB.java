@@ -102,25 +102,25 @@ public class DB {
         return categoryList;
     }
 
-    public static boolean writeNews(News news) {
-        try {
-            String title = news.getTitle();
-            String contents = news.getContents();
-            byte[] image = news.getImage();
-
-            db = dbHelper.getWritableDatabase();
-            SQLiteStatement p = db.compileStatement("INSERT INTO news ('title', 'contents', 'image', 'u_no', 'reg_date') VALUES (?, ?, ?, ?, ?)");
-            p.bindString(1, title);
-            p.bindString(2, contents);
-            p.bindBlob(3, image);
-            p.bindLong(4, DB.loginUser.getUserNo());
-            p.bindString(5, new Date().toString());
-            p.executeInsert();
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
+//    public static boolean writeNews(News news) {
+//        try {
+//            String title = news.getTitle();
+//            String contents = news.getContents();
+//            byte[] image = news.getImage();
+//
+//            db = dbHelper.getWritableDatabase();
+//            SQLiteStatement p = db.compileStatement("INSERT INTO news ('title', 'contents', 'image', 'u_no', 'reg_date') VALUES (?, ?, ?, ?, ?)");
+//            p.bindString(1, title);
+//            p.bindString(2, contents);
+//            p.bindBlob(3, image);
+//            p.bindLong(4, DB.loginUser.getUserNo());
+//            p.bindString(5, new Date().toString());
+//            p.executeInsert();
+//            return true;
+//        } catch (Exception e) {
+//            return false;
+//        }
+//    }
 
     public static boolean updateUserInfo(String name, String pw, String phone) {
         try {

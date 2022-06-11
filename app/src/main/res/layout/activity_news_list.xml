@@ -30,121 +30,76 @@
         app:layout_constraintTop_toBottomOf="@+id/title"
         tools:ignore="MissingConstraints">
 
-        <Button
-            android:id="@+id/interest"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="관심" />
+<!--        <Button-->
+<!--            android:id="@+id/newslist_interest"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="관심" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/category1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="연예" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/category2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="스포츠" />-->
 
         <Button
-            android:id="@+id/category1"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="연예" />
-
-        <Button
-            android:id="@+id/category2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="스포츠" />
-
-        <Button
-            android:id="@+id/category3"
+            android:id="@+id/newslist_category1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="정치" />
 
         <Button
-            android:id="@+id/category4"
+            android:id="@+id/newslist_category2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="경제" />
 
         <Button
-            android:id="@+id/category5"
+            android:id="@+id/newslist_category3"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="사회" />
 
         <Button
-            android:id="@+id/category6"
+            android:id="@+id/newslist_category4"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="생활/문화" />
+            android:text="생활문화" />
 
         <Button
-            android:id="@+id/category7"
+            android:id="@+id/newslist_category5"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="IT/과학" />
+            android:text="IT과학" />
 
         <Button
-            android:id="@+id/category8"
+            android:id="@+id/newslist_category6"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="세계" />
-
-        <Button
-            android:id="@+id/searchBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="조건 검색" />
+            android:text="세계" /> />
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="486dp"
+    <ListView
+        android:id="@+id/newslist_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:ignore="MissingConstraints">
-
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/newsImage"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                tools:srcCompat="@drawable/logo" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/newsTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="newsTitle" />
-
-                <TextView
-                    android:id="@+id/newsContents"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="newsContents" />
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

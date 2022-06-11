@@ -22,8 +22,8 @@ public class UserInfoActivity extends AppCompatActivity {
     private EditText pwText1;
     private EditText pwText2;
     private EditText phoneText;
-    private int[] btnId = {R.id.userinfo_updateBtn, R.id.userinfo_withdrawalBtn, R.id.userinfo_myTraceBtn, R.id.userinfo_setHashtagBtn};
-    private Button[] btn = new Button[4];
+    private int[] btnId = {R.id.userinfo_updateBtn, R.id.userinfo_withdrawalBtn};
+    private Button[] btn = new Button[2];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,34 +98,11 @@ public class UserInfoActivity extends AppCompatActivity {
                 msgDlg.show();
             }
         });
-
-        btn[2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(UserInfoActivity.this, MyTraceActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        btn[3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
     }
 
     public void getUserInfo() {
         idText.setText(DB.loginUser.getUserId());
         nameText.setText(DB.loginUser.getUserName());
         phoneText.setText(DB.loginUser.getUserPhone());
-    }
-
-    public void selectTracetList() {
-
-    }
-
-    public void setHashtag() {
-
     }
 }

@@ -27,7 +27,7 @@ public class WeatherActivity extends AppCompatActivity {
     private ImageView imageView;
     private TextView explanationText;
     private TextView temperaturesText;
-    ValueHandler handler = new ValueHandler();
+    ActivityHandler handler = new ActivityHandler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +39,11 @@ public class WeatherActivity extends AppCompatActivity {
         explanationText = (TextView) findViewById(R.id.weather_weatherExplanation);
         temperaturesText = (TextView) findViewById(R.id.weather_temperaturesText);
 
-        BackgroundThread thread = new BackgroundThread();
+        WeatherInfoThread thread = new WeatherInfoThread();
         thread.start();
     }
 
-    class BackgroundThread extends Thread {
+    class WeatherInfoThread extends Thread {
         @Override
         public void run() {
             try {
@@ -68,7 +68,7 @@ public class WeatherActivity extends AppCompatActivity {
         }
     }
 
-    class ValueHandler extends Handler {
+    class ActivityHandler extends Handler {
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);

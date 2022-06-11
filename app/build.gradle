@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.news_application"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -47,4 +47,7 @@ dependencies {
 
     // 크롤링을 위한 jsoup
     implementation 'org.jsoup:jsoup:1.13.1'
+
+    // 워드클라우드
+    implementation 'com.mordred.wordcloud:Wordcloud:2.6'
 }

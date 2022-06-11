@@ -56,25 +56,25 @@ public class NewsFormActivity extends AppCompatActivity {
             }
         });
 
-        writeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-
-                if ((! titleText.getText().toString().equals("")) && (! contentText.getText().toString().equals(""))) {
-                    if (DB.writeNews(new News(titleText.getText().toString(), contentText.getText().toString(), stream.toByteArray()))) {
-                        Toast.makeText(NewsFormActivity.this, "작성 완료!!!", Toast.LENGTH_SHORT).show();
-                        finish();
-                    } else {
-                        Toast.makeText(NewsFormActivity.this, "작성 실패!!!", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(NewsFormActivity.this, "제목과 내용을 입력해주세요.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        writeBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
+//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//
+//                if ((! titleText.getText().toString().equals("")) && (! contentText.getText().toString().equals(""))) {
+//                    if (DB.writeNews(new News(titleText.getText().toString(), contentText.getText().toString(), stream.toByteArray()))) {
+//                        Toast.makeText(NewsFormActivity.this, "작성 완료!!!", Toast.LENGTH_SHORT).show();
+//                        finish();
+//                    } else {
+//                        Toast.makeText(NewsFormActivity.this, "작성 실패!!!", Toast.LENGTH_SHORT).show();
+//                    }
+//                } else {
+//                    Toast.makeText(NewsFormActivity.this, "제목과 내용을 입력해주세요.", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
     }
 
     @Override

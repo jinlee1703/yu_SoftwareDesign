@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/dateText"
+        android:id="@+id/hotkeyword_dateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -30,14 +30,14 @@
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/hotkeyword_imageView"
         android:layout_width="350dp"
         android:layout_height="250dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateText"
+        app:layout_constraintTop_toBottomOf="@+id/hotkeyword_dateText"
         app:layout_constraintVertical_bias="0.2"
         app:srcCompat="@drawable/logo" />
 
