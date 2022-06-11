@@ -11,14 +11,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="뉴스"
+        android:text="현재 날씨"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/dateText"
+        android:id="@+id/weather_dateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -30,19 +30,19 @@
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/weather_imageView"
         android:layout_width="250dp"
         android:layout_height="250dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateText"
+        app:layout_constraintTop_toBottomOf="@+id/weather_dateText"
         app:layout_constraintVertical_bias="0.2"
         app:srcCompat="@drawable/logo" />
 
     <TextView
-        android:id="@+id/weatherExplanation"
+        android:id="@+id/weather_weatherExplanation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -50,22 +50,11 @@
         android:text="오늘 날씨는 OO입니다."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/weather_imageView" />
+
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="최저기온 / 최고기온"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weatherExplanation" />
-
-    <TextView
-        android:id="@+id/temperaturesText"
+        android:id="@+id/weather_temperaturesText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -74,6 +63,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/weather_weatherExplanation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

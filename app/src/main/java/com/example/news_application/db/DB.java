@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteStatement;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.provider.DocumentsContract;
 import android.util.Log;
 import android.widget.Toast;
 

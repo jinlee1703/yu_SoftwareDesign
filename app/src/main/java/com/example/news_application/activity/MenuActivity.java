@@ -37,8 +37,6 @@ public class MenuActivity extends AppCompatActivity {
         }
         setTextViews(DB.loginUser.getUserRole());
         setButtons(DB.loginUser.getUserRole());
-
-        Toast.makeText(this, ReportActivity.class.getName(), Toast.LENGTH_SHORT).show();
     }
 
     public void setTextViews(int role) {

@@ -8,6 +8,7 @@ import android.widget.Button;
 import com.example.news_application.R;
 import com.example.news_application.obj.News;
 
+import java.io.IOException;
 import java.util.Date;
 
 public class NewsListActivity extends AppCompatActivity {
@@ -18,6 +19,17 @@ public class NewsListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_list);
+
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    News.loadNews();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
     }
 
     public void setNewsList(int[] categoryId, Date startDate, Date endDate, int pressId) {

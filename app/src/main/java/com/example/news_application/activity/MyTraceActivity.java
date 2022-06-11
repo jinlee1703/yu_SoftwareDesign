@@ -2,6 +2,7 @@ package com.example.news_application.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,6 +18,12 @@ public class MyTraceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_trace);
+
+//        dateText;
+//        traceText;
+//        daleteBtn;
+
+//        Cursor cursor = queryData
     }
 
     public void setTraceList() {

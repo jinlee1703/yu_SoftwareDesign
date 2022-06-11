@@ -3,6 +3,7 @@ package com.example.news_application.activity;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -95,6 +96,21 @@ public class UserInfoActivity extends AppCompatActivity {
                         });
                 AlertDialog msgDlg = msgBuilder.create();
                 msgDlg.show();
+            }
+        });
+
+        btn[2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserInfoActivity.this, MyTraceActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn[3].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }
