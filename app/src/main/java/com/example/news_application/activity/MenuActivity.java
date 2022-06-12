@@ -20,10 +20,9 @@ public class MenuActivity extends AppCompatActivity {
     private TextView subtitle;
     private Button[] btn = new Button[5];
     private int[] btnId = new int[]{R.id.menu_btn1, R.id.menu_btn2, R.id.menu_btn3, R.id.menu_btn4, R.id.menu_btn5};
-    private String[][] btnText = new String[][]{{"신고 조회", "회원 관리"}, {"뉴스", "날씨", "오늘의 핫키워드", "내 정보", "내 알림"}, {"뉴스 작성", "내 정보"}};
-    private AppCompatActivity[][] activities =  new AppCompatActivity[][]{{new ReportActivity(), new UserListActivity()},
-            {new NewsListActivity(), new WeatherActivity(), new HotKeywordActivity(), new UserInfoActivity(), new UserInfoActivity()},
-            {new NewsFormActivity(), new UserInfoActivity()}};
+    private String[][] btnText = new String[][]{{"회원 관리"}, {"뉴스", "날씨", "오늘의 핫키워드", "내 정보"}};
+    private AppCompatActivity[][] activities =  new AppCompatActivity[][]{{new UserListActivity()},
+            {new NewsListActivity(), new WeatherActivity(), new HotKeywordActivity(), new UserInfoActivity(), new UserInfoActivity()}};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +43,11 @@ public class MenuActivity extends AppCompatActivity {
         if (role == 0) {
             // 관리자 로그인
             title.setText("Admin Menu");
-        } else if (role == 1) {
+        } else {
             // 사용자 로그인
             title.setText("Customer Menu");
-        } else if (role == 2) {
-            // 기자 로그인
-            title.setText("Reporter Menu");
         }
+
         subtitle.setText(DB.loginUser.getUserName() + "님 반갑습니다.");
     }
 
@@ -63,7 +60,7 @@ public class MenuActivity extends AppCompatActivity {
         for (int i = btnText[role].length; i < 5; i++) {
             btn[i].setVisibility(View.INVISIBLE);
         }
-        // 버튼 이벤트 추가(해당 액티비치 출력)
+        // 버튼 이벤트 추가(해당 액티비티 출력)
         for (int i = 0; i < activities[role].length; i++) {
             AppCompatActivity a = activities[role][i];
 

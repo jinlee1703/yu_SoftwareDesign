@@ -102,14 +102,14 @@ public class DB {
         return categoryList;
     }
 
-//    public static boolean writeNews(News news) {
+//    public static boolean writeNews(News news_item) {
 //        try {
-//            String title = news.getTitle();
-//            String contents = news.getContents();
-//            byte[] image = news.getImage();
+//            String title = news_item.getTitle();
+//            String contents = news_item.getContents();
+//            byte[] image = news_item.getImage();
 //
 //            db = dbHelper.getWritableDatabase();
-//            SQLiteStatement p = db.compileStatement("INSERT INTO news ('title', 'contents', 'image', 'u_no', 'reg_date') VALUES (?, ?, ?, ?, ?)");
+//            SQLiteStatement p = db.compileStatement("INSERT INTO news_item ('title', 'contents', 'image', 'u_no', 'reg_date') VALUES (?, ?, ?, ?, ?)");
 //            p.bindString(1, title);
 //            p.bindString(2, contents);
 //            p.bindBlob(3, image);
@@ -146,6 +146,16 @@ public class DB {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public static ArrayList<User> getUserLIst() {
+        ArrayList<User> list = new ArrayList<User>();
+        db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM user", null );
+        while (cursor.moveToNext()) {
+            list.add(new User(cursor.getInt(0), cursor.getString(1), cursor.getString(3), cursor.getString(4), cursor.getInt(5), null));
+        }
+        return list;
     }
 
     static class DBHelper extends SQLiteOpenHelper {

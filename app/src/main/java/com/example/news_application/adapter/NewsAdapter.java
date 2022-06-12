@@ -1,9 +1,6 @@
-package com.example.news_application.obj;
+package com.example.news_application.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +10,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.news_application.R;
+import com.example.news_application.obj.News;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class NewsAdapter extends BaseAdapter {
@@ -47,7 +42,7 @@ public class NewsAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View converView, ViewGroup parent) {
-        View view = mLayoutInflater.inflate(R.layout.news, null);
+        View view = mLayoutInflater.inflate(R.layout.news_item, null);
 
         ImageView imageView = (ImageView)view.findViewById(R.id.poster);
         TextView title = (TextView)view.findViewById(R.id.newsTitle);
