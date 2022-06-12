@@ -49,8 +49,7 @@ public class HotKeywordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hot_keyword);
 
-        dateText = (TextView) findViewById(R.id.hotkeyword_dateText);
-        wordCloud = (ImageView) findViewById(R.id.hotkeyword_imageView);
+        setViewById();
 
         new Thread(() -> {
             String url = "https://trends.google.com/trends/trendingsearches/daily/rss?geo=KR";
@@ -89,6 +88,14 @@ public class HotKeywordActivity extends AppCompatActivity {
             Message msg = handler.obtainMessage();
             handler.sendMessage(msg);
         }).start();
+    }
+
+    public void setViewById() {
+        dateText = (TextView) findViewById(R.id.hotkeyword_dateText);
+        wordCloud = (ImageView) findViewById(R.id.hotkeyword_imageView);
+    }
+
+    public void eventHandler() {
 
     }
 

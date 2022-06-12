@@ -4,20 +4,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.news_application.R;
-import com.example.news_application.adapter.NewsAdapter;
 import com.example.news_application.adapter.UserAdapter;
 import com.example.news_application.db.DB;
-import com.example.news_application.obj.News;
 import com.example.news_application.obj.User;
 
 import java.util.ArrayList;
@@ -32,11 +27,15 @@ public class UserListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_list);
 
-        listView = (ListView) findViewById(R.id.userlist_listView);
-        loadUserList();
+        setViewById();
+        setListView();
     }
 
-    public void loadUserList() {
+    public void setViewById() {
+        listView = (ListView) findViewById(R.id.userlist_listView);
+    }
+
+    public void setListView() {
         userArrayList = DB.getUserLIst();
         myAdapter = new UserAdapter(UserListActivity.this, userArrayList);
 
@@ -54,7 +53,7 @@ public class UserListActivity extends AppCompatActivity {
                                 if (DB.withdrawalUser(userArrayList.get(position).getUserNo())) {
                                     Toast.makeText(UserListActivity.this, "회원 탈퇴 완료!!!", Toast.LENGTH_SHORT).show();
                                     userArrayList.clear();
-                                    loadUserList();
+                                    setListView();
                                     myAdapter.notifyDataSetChanged();
                                     listView.setAdapter(myAdapter);
                                 } else {
@@ -70,9 +69,5 @@ public class UserListActivity extends AppCompatActivity {
                 msgDlg.show();
             }
         });
-    }
-
-    public void withdrawalUser(String userId) {
-
     }
 }

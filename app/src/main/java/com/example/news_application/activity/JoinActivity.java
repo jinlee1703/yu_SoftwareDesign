@@ -25,7 +25,6 @@ import com.google.android.material.internal.TextWatcherAdapter;
 import java.util.ArrayList;
 
 public class JoinActivity extends AppCompatActivity {
-    private Spinner roleSpinner;
     private EditText idText;
     private EditText nameText;
     private EditText pwText1;
@@ -40,7 +39,11 @@ public class JoinActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
 
-        roleSpinner = (Spinner) findViewById(R.id.join_roleSpinner);
+        setViewById();
+        eventHandler();
+    }
+
+    public void setViewById() {
         idText = (EditText) findViewById(R.id.join_idText);
         nameText = (EditText) findViewById(R.id.join_nameText);
         pwText1 = (EditText) findViewById(R.id.join_pwText1);
@@ -49,7 +52,9 @@ public class JoinActivity extends AppCompatActivity {
 
         checkBtn = (Button) findViewById(R.id.join_checkBtn);
         joinBtn = (Button) findViewById(R.id.join_joinBtn);
+    }
 
+    public void eventHandler() {
         idText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
@@ -99,10 +104,10 @@ public class JoinActivity extends AppCompatActivity {
                 }
 
                 if (idText.getText().equals("")
-                || pwText1.getText().equals("")
-                || pwText2.getText().equals("")
-                || nameText.getText().equals("")
-                || phoneText.getText().equals("")) {
+                        || pwText1.getText().equals("")
+                        || pwText2.getText().equals("")
+                        || nameText.getText().equals("")
+                        || phoneText.getText().equals("")) {
                     builder.setMessage("모든 양식을 입력해주세요.");
                     builder.create().show();
                     return;
@@ -113,12 +118,10 @@ public class JoinActivity extends AppCompatActivity {
                     return;
                 }
 
-                Log.d("AAAA", roleSpinner.getSelectedItemPosition() + "");
                 if (DB.join(idText.getText().toString(),
                         pwText1.getText().toString(),
                         nameText.getText().toString(),
-                        phoneText.getText().toString(),
-                        (roleSpinner.getSelectedItemPosition()+1))) {
+                        phoneText.getText().toString())) {
                     Toast.makeText(JoinActivity.this, "회원가입 성공!!!", Toast.LENGTH_SHORT).show();
                     JoinActivity.this.finish();
                 } else {
@@ -126,16 +129,5 @@ public class JoinActivity extends AppCompatActivity {
                 }
             }
         });
-
-        addRole();
-    }
-
-    public void addRole() {
-        ArrayList<String> roleList = new ArrayList<>();
-        roleList.add("고객");
-        roleList.add("기자");
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, roleList);
-        roleSpinner.setAdapter(adapter);
     }
 }

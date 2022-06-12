@@ -34,13 +34,16 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
 
+        setViewById();
+        WeatherInfoThread thread = new WeatherInfoThread();
+        thread.start();
+    }
+
+    public void setViewById() {
         dateText = (TextView) findViewById(R.id.weather_dateText);
         imageView = (ImageView) findViewById(R.id.weather_imageView);
         explanationText = (TextView) findViewById(R.id.weather_weatherExplanation);
         temperaturesText = (TextView) findViewById(R.id.weather_temperaturesText);
-
-        WeatherInfoThread thread = new WeatherInfoThread();
-        thread.start();
     }
 
     class WeatherInfoThread extends Thread {

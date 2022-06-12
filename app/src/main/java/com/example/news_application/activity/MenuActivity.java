@@ -29,13 +29,10 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        title = (TextView) findViewById(R.id.menu_title);
-        subtitle = (TextView) findViewById(R.id.menu_subtitle);
-        for (int i = 0; i < 5; i ++) {
-            btn[i] = (Button) findViewById(btnId[i]);
-        }
+        setViewById();
         setTextViews(DB.loginUser.getUserRole());
         setButtons(DB.loginUser.getUserRole());
+        eventHandler(DB.loginUser.getUserRole());
     }
 
     public void setTextViews(int role) {
@@ -47,19 +44,18 @@ public class MenuActivity extends AppCompatActivity {
             // 사용자 로그인
             title.setText("Customer Menu");
         }
-
         subtitle.setText(DB.loginUser.getUserName() + "님 반갑습니다.");
     }
 
-    public void setButtons(int role) {
-        // 버튼 텍스트 설정
-        for (int i = 0; i < btnText[role].length; i++) {
-            btn[i].setText(btnText[role][i]);
+    public void setViewById() {
+        title = (TextView) findViewById(R.id.menu_title);
+        subtitle = (TextView) findViewById(R.id.menu_subtitle);
+        for (int i = 0; i < 5; i ++) {
+            btn[i] = (Button) findViewById(btnId[i]);
         }
-        // 버튼 출력 여부 결정
-        for (int i = btnText[role].length; i < 5; i++) {
-            btn[i].setVisibility(View.INVISIBLE);
-        }
+    }
+
+    public void eventHandler(int role) {
         // 버튼 이벤트 추가(해당 액티비티 출력)
         for (int i = 0; i < activities[role].length; i++) {
             AppCompatActivity a = activities[role][i];
@@ -71,6 +67,17 @@ public class MenuActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+        }
+    }
+
+    public void setButtons(int role) {
+        // 버튼 텍스트 설정
+        for (int i = 0; i < btnText[role].length; i++) {
+            btn[i].setText(btnText[role][i]);
+        }
+        // 버튼 출력 여부 결정
+        for (int i = btnText[role].length; i < 5; i++) {
+            btn[i].setVisibility(View.INVISIBLE);
         }
     }
 }

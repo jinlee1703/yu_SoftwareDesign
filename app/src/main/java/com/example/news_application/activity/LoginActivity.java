@@ -42,13 +42,18 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // findViewById
+        setViewById();
+        eventHandler();
+    }
+
+    public void setViewById() {
         idText = (EditText) findViewById(R.id.login_idText);
         pwText = (EditText) findViewById(R.id.login_pwText);
         loginBtn = (Button) findViewById(R.id.login_loginBtn);
         joinBtn = (Button) findViewById(R.id.login_joinBtn);
+    }
 
-
+    public void eventHandler() {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +77,4 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }

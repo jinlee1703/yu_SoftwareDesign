@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.news_application.R;
-import com.example.news_application.obj.News;
 import com.example.news_application.adapter.NewsAdapter;
 
 import org.jsoup.Jsoup;
@@ -26,9 +25,7 @@ import java.util.ArrayList;
 
 public class NewsListActivity extends AppCompatActivity {
     private Button[] btn = new Button[6];
-    private News[] news;
     private ListView listView;
-    //    ActivityHandler handler = new ActivityHandler();
     private ArrayList<News> newsArrayList = new ArrayList<News>();
     private NewsAdapter myAdapter;
     int[] btnId = new int[] {
@@ -77,7 +74,6 @@ public class NewsListActivity extends AppCompatActivity {
         public void run() {
             try {
                 int page = 2;
-                int cnt = 0;
 
                 newsArrayList.clear();
 

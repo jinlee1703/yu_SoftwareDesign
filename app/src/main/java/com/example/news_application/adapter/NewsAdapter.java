@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.news_application.R;
-import com.example.news_application.obj.News;
 
 import java.util.ArrayList;
 
@@ -48,17 +47,16 @@ public class NewsAdapter extends BaseAdapter {
         TextView title = (TextView)view.findViewById(R.id.newsTitle);
         TextView content = (TextView)view.findViewById(R.id.contents);
 
-//        imageView.setImageResource(R.drawable.default_news_img);
         Glide.with(view).load(newsList.get(position).getImage())
                 .error(R.drawable.default_news_img)
                 .into(imageView);
         title.setText(newsList.get(position).getTitle());
         content.setText(newsList.get(position).getContents());
-        if (newsList.get(position).getTitle().length() >= 25) {
-            title.setText(newsList.get(position).getTitle().substring(0, 25) + "...");
+        if (newsList.get(position).getTitle().length() > 30) {
+            title.setText(newsList.get(position).getTitle().substring(0, 30) + "...");
         }
-        if (newsList.get(position).getContents().length() >= 25) {
-            content.setText(newsList.get(position).getContents().substring(0, 25) + "...");
+        if (newsList.get(position).getContents().length() > 30) {
+            content.setText(newsList.get(position).getContents().substring(0, 30) + "...");
         }
 
         return view;

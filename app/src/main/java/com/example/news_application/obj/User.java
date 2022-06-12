@@ -8,15 +8,13 @@ public class User {
     private String userName;
     private String userPhone;
     private int userRole;
-    private ArrayList<String> hashtag;
 
-    public User(int userNo, String userId, String userName, String userPhone, int userRole, ArrayList<String> hashtag) {
+    public User(int userNo, String userId, String userName, String userPhone, int userRole) {
         this.userNo = userNo;
         this.userId = userId;
         this.userName = userName;
         this.userPhone = userPhone;
         this.userRole = userRole;
-        this.hashtag = hashtag;
     }
 
     public User() {
@@ -25,54 +23,25 @@ public class User {
         this.userName = "관리자";
         this.userPhone = "";
         this.userRole = 0;
-        this.hashtag = null;
     }
 
     public int getUserNo() {
         return userNo;
     }
 
-    public void setUserNum(int userNum) {
-        this.userNo = userNum;
-    }
-
     public String getUserId() {
         return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
     }
 
     public String getUserName() {
         return userName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     public int getUserRole() {
         return userRole;
     }
 
-    public void setUserRole(int userRole) {
-        this.userRole = userRole;
-    }
-
-    public ArrayList<String> getHashtag() {
-        return hashtag;
-    }
-
-    public void setHashtag(ArrayList<String> hashtag) {
-        this.hashtag = hashtag;
-    }
-
     public String getUserPhone() {
         return userPhone;
-    }
-
-    public void setUserPhone(String userPhone) {
-        this.userPhone = userPhone;
     }
 }

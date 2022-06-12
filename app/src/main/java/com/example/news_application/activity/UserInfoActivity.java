@@ -30,6 +30,12 @@ public class UserInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
 
+        setViewById();
+        setView();
+        eventHandler();
+    }
+
+    public void setViewById() {
         idText = (EditText) findViewById(R.id.userinfo_idText);
         nameText = (EditText) findViewById(R.id.userinfo_nameText);
         pwText1 = (EditText) findViewById(R.id.userinfo_pwText1);
@@ -43,16 +49,22 @@ public class UserInfoActivity extends AppCompatActivity {
         if (DB.loginUser.getUserRole() == 0) {
             btn[3].setVisibility(View.INVISIBLE);
         }
+    }
 
-        getUserInfo();
+    public void setView() {
+        idText.setText(DB.loginUser.getUserId());
+        nameText.setText(DB.loginUser.getUserName());
+        phoneText.setText(DB.loginUser.getUserPhone());
+    }
 
+    public void eventHandler() {
         btn[0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (pwText1.getText().toString().equals("")
-                    || pwText2.getText().toString().equals("")
-                    || nameText.getText().toString().equals("")
-                    || phoneText.getText().toString().equals("")) {
+                        || pwText2.getText().toString().equals("")
+                        || nameText.getText().toString().equals("")
+                        || phoneText.getText().toString().equals("")) {
                     Toast.makeText(UserInfoActivity.this, "모든 양식을 입력해야 합니다.", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -98,11 +110,5 @@ public class UserInfoActivity extends AppCompatActivity {
                 msgDlg.show();
             }
         });
-    }
-
-    public void getUserInfo() {
-        idText.setText(DB.loginUser.getUserId());
-        nameText.setText(DB.loginUser.getUserName());
-        phoneText.setText(DB.loginUser.getUserPhone());
     }
 }

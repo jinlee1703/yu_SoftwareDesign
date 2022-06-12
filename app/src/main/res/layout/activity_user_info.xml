@@ -113,21 +113,5 @@
         android:text="탈퇴"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userinfo_updateBtn" />
-    <Button
-        android:id="@+id/userinfo_myTraceBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="내 댓글 보기"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userinfo_withdrawalBtn" />
-    <Button
-        android:id="@+id/userinfo_setHashtagBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="해시태그 설정"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userinfo_myTraceBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
